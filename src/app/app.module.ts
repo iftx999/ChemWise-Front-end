@@ -8,6 +8,9 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { EquipamentosComponent } from './equipamentos/equipamentos.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   imports: [
@@ -18,6 +21,8 @@ import { EquipamentosComponent } from './equipamentos/equipamentos.component';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    FlexLayoutModule,
+    MatButtonModule,
   ],
   declarations: [
     AppComponent,
