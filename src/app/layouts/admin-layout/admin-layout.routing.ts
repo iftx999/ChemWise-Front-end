@@ -9,6 +9,7 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { EquipamentosComponent } from 'app/equipamentos/equipamentos.component';
+import { EquipametoDialogComponent } from 'app/equipamentos/equipameto-dialog/equipameto-dialog.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -62,5 +63,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'equipamento',    component: EquipamentosComponent },
+    { path: 'dialogEquipamento',    component: EquipametoDialogComponent },
 
 ];

@@ -18,6 +18,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { EquipamentosComponent } from 'app/equipamentos/equipamentos.component';
+import { EquipametoDialogComponent } from 'app/equipamentos/equipameto-dialog/equipameto-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   imports: [
@@ -32,6 +36,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSelectModule,
     MatTooltipModule,
     FlexLayoutModule,
+    MatDialogModule,
   ],
   declarations: [
     DashboardComponent,
@@ -42,6 +47,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    EquipamentosComponent,
+    EquipametoDialogComponent,
+    
 
   ]
 })

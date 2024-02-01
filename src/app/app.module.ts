@@ -7,10 +7,8 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { EquipamentosComponent } from './equipamentos/equipamentos.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
-import { EquipametoDialogComponent } from './equipamentos/equipameto-dialog/equipameto-dialog.component';
 
 
 @NgModule({
@@ -24,12 +22,12 @@ import { EquipametoDialogComponent } from './equipamentos/equipameto-dialog/equi
     AppRoutingModule,
     FlexLayoutModule,
     MatButtonModule,
+   
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    EquipamentosComponent,
-    EquipamentosComponent,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
