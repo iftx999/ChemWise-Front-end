@@ -21,6 +21,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { EquipamentosComponent } from 'app/equipamentos/equipamentos.component';
 import { EquipametoDialogComponent } from 'app/equipamentos/equipameto-dialog/equipameto-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTable, MatTableModule } from '@angular/material/table';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTooltipModule,
     FlexLayoutModule,
     MatDialogModule,
+    MatTableModule,
+    BrowserModule,
   ],
   declarations: [
     DashboardComponent,
