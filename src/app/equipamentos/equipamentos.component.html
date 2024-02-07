@@ -1,28 +1,29 @@
 <div class="main-content">
-    <div class="container-fluid">
-        <div>      
-        <div class="row margem justify-content-end">
-            <button mat-raised-button color="warn"  (click)="openPesquisaExportDialog()">Adicionar</button>
+  <div class="container-fluid">
+    <div>
+      <div class="row margem justify-content-end">
+        <button mat-raised-button color="warn" (click)="openDialog()">Adicionar</button>
 
-        </div>
-      
-        <div class="container">
-          <table mat-table [dataSource]="equipamentoDataSource" matSort class="mat-elevation-z8">
-            
+      </div>
+
+      <div class="container">
+        <table mat-table [dataSource]="equipamentoDataSource" matSort class="mat-elevation-z8 demo-table">
+          <div class="margem">
             <!-- Nome do Equipamento Column -->
             <ng-container matColumnDef="nome_equipamento">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome do Equipamento </th>
-              <td mat-cell *matCellDef="let equipamento"> {{equipamento.nome_equipamento}} </td>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Equipamento </th>
+              <td mat-cell *matCellDef="let equipamento" style="padding-left: 10px; padding-right: 10px;"> {{equipamento.nome_equipamento}} </td>
             </ng-container>
-        
+            </div>
+
             <!-- Status Column -->
             <ng-container matColumnDef="status">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
-              <td mat-cell *matCellDef="let equipamento"> {{equipamento.status}} </td>
+              <td mat-cell *matCellDef="let equipamento" style="padding-left: 10px; padding-right: 10px;"> {{equipamento.status}} </td>
             </ng-container>
-        
+
             <!-- Adicione mais colunas conforme necessário -->
-        
+
             <!-- Coluna de Ações -->
             <ng-container matColumnDef="actions">
               <th mat-header-cell *matHeaderCellDef> Ações </th>
@@ -30,14 +31,14 @@
                 <!-- Botões de ação aqui, por exemplo, editar, excluir, etc. -->
               </td>
             </ng-container>
-        
-            <!-- Definir a ordem das colunas -->
-            <tr mat-header-row *matHeaderRowDef="equipamentoColuns"></tr>
-            <tr mat-row *matRowDef="let row; columns: equipamentoColuns;"></tr>
-          </table>
-        </div>
-                        
+
+          <!-- Definir a ordem das colunas -->
+          <tr mat-header-row *matHeaderRowDef="equipamentoColuns"></tr>
+          <tr mat-row *matRowDef="let row; columns: equipamentoColuns;"></tr>
+        </table>
+      </div>
+
     </div>
-        
-    </div>
+
+  </div>
 </div>

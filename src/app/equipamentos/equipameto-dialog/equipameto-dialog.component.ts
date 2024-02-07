@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-equipameto-dialog',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./equipameto-dialog.component.scss']
 })
 export class EquipametoDialogComponent {
+
+  constructor(    private _form: FormBuilder,
+    ) { }
+
 
 }

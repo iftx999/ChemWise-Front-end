@@ -3,9 +3,9 @@ import { EquipametoDialogComponent } from './equipameto-dialog/equipameto-dialog
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { EquipamentoService } from 'app/service/equipamento.service';
-import { Equipamento } from 'app/model/equipamento';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { Equipamento } from 'app/model/equipamento';
 
 
 @Component({
@@ -37,22 +37,52 @@ export class EquipamentosComponent implements OnInit {
   
   listarEquipamentos(): void {
   this.eqpService.getEquipamentos().subscribe((data) => { 
-      this.equipamentoList = data; // Atualize a lista de equipamentos
+  this.equipamentoList = data; // Atualize a lista de equipamentos
       this.equipamentoDataSource = new MatTableDataSource(this.equipamentoList); // Atualize o dataSource da tabela
     }
     );
   } 
 
+  
+  //salvar equipamento
+  salvarEquipamento(equipamento: Equipamento): void {
+    this.eqpService.addEquipamento(equipamento).subscribe((data) => {
+      this.listarEquipamentos();
+    });
+  }
+
+//atualizar equipamento
+  atualizaCanal(id: number, equipamento: Equipamento): void {
+    this.eqpService.updateEquipamento(id, equipamento).subscribe((data) => {
+      this.listarEquipamentos();
+    });
+  }
 
 
 
-  openPesquisaExportDialog(): void {
+
+  openDialog(row?: Equipamento): void {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "600px";
-    dialogConfig.height = "500px";
+    dialogConfig.width = "40%";
+    dialogConfig.minWidth = "380px";
 
-    var dialogRef = this._dialog.open(EquipametoDialogComponent) ;
+    dialogConfig.data = {
+      equipamento: row ? row : new Equipamento()
+    };
+
+    let dialogRef = this._dialog.open(EquipametoDialogComponent, dialogConfig);
+    dialogRef.afterClosed()
+      .subscribe(result => {
+        if (!result) { return; }
+
+        if (!result.id) {
+          this.salvarEquipamento(result);
+        } else {
+          this.atualizaCanal(result.id, result);
+          
+        }
+      });
   }
 
 }

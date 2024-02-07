@@ -1,3 +1,6 @@
-.margem{
-    margin-right: 30px;
+/* Adicione este estilo ao seu arquivo de folha de estilos CSS */
+.mat-column-nome_equipamento,
+.mat-column-status {
+  padding-left: 10px; /* Adicione o espaçamento desejado à esquerda da coluna */
+  padding-right: 10px; /* Adicione o espaçamento desejado à direita da coluna */
 }

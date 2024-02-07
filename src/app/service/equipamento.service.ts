@@ -14,4 +14,12 @@ export class EquipamentoService {
   getEquipamentos(): Observable<Equipamento[]> {
     return this.http.get<Equipamento[]>(this.apiUrl);
   }
+  //adicionar equipamento
+  addEquipamento(equipamento: Equipamento): Observable<Equipamento> {
+    return this.http.post<Equipamento>(this.apiUrl, equipamento);
+  }
+  //atualizar equipamento
+  updateEquipamento(id: number, equipamento: Equipamento): Observable<Equipamento> {
+    return this.http.put<Equipamento>(this.apiUrl + '/' + id, equipamento);
+  }
 }
