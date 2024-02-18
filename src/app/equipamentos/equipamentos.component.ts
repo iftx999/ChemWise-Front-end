@@ -74,6 +74,12 @@ export class EquipamentosComponent implements OnInit {
       }
     });
   }
+  //deletar equipamento
+  deleteEquipamentos(id: number): void {
+    this.equipamentoService.deleteEquipamento(id).subscribe(() => {
+      this.listarEquipamentos();
+    });
+  }
   
 
 }

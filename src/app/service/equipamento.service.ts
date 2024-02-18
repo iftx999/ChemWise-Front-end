@@ -22,4 +22,8 @@ export class EquipamentoService {
   updateEquipamento(id: number, equipamento: Equipamento): Observable<Equipamento> {
     return this.http.put<Equipamento>(this.apiUrl + '/' + id, equipamento);
   }
+  //deletar equipamento
+  deleteEquipamento(id: number): Observable<Equipamento> {
+    return this.http.delete<Equipamento>(this.apiUrl + '/' + id);
+  }
 }
