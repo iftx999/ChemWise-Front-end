@@ -1,17 +1,18 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { EquipametoDialogComponent } from 'app/equipamentos/equipameto-dialog/equipameto-dialog.component';
 import { Experimento } from 'app/model/experimento';
 import { ExperimentoService } from 'app/service/experimento.service';
+import { ExperimentoDialogComponent } from './experimento-dialog/experimento-dialog.component';
 
 @Component({
   selector: 'app-experimento',
   templateUrl: './experimento.component.html',
   styleUrls: ['./experimento.component.scss']
 })
-export class ExperimentoComponent {
+export class ExperimentoComponent implements OnInit{
 
   experimentoList: Experimento[];
   experimentoDataSource: MatTableDataSource<Experimento>;
@@ -36,11 +37,11 @@ export class ExperimentoComponent {
     });
   }
 
-  salvarOuAtualizarExperimento(Experimento: Experimento): void {
-    if (!Experimento.id) {
-      this.salvarExperimento(Experimento);
+  salvarOuAtualizarExperimento(experimento: Experimento): void {
+    if (!experimento.id) {
+      this.salvarExperimento(experimento);
     } else {
-      this.atualizarExperimento(Experimento);
+      this.atualizarExperimento(experimento);
     }
   }
 
@@ -67,7 +68,7 @@ export class ExperimentoComponent {
       Experimento: row ? row : new Experimento()
     };
   
-    const dialogRef = this.dialog.open(EquipametoDialogComponent, dialogConfig);
+    const dialogRef = this.dialog.open(ExperimentoDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.salvarOuAtualizarExperimento(result);

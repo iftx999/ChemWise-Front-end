@@ -6,9 +6,9 @@ import { ExperimentoService } from 'app/service/experimento.service';
 import {Experimento} from 'app/model/experimento';
 
 @Component({
-  selector: 'app-equipameto-dialog',
-  templateUrl: './equipameto-dialog.component.html',
-  styleUrls: ['./equipameto-dialog.component.scss']
+  selector: 'app-experimento-dialog',
+  templateUrl: './experimento-dialog.component.html',
+  styleUrls: ['./experimento-dialog.component.scss']
 })
 export class ExperimentoDialogComponent {
 
@@ -30,7 +30,7 @@ export class ExperimentoDialogComponent {
       id: [this.data.experimento.id],
       descricao: [this.data.experimento.descricao, Validators.maxLength(100)],
       titulo: [this.data.experimento.titulo, Validators.maxLength(100)],
-      data: [this.data.experimento.data, Validators.maxLength(100)]
+      data: [this.data.experimento.data_cadas, Validators.maxLength(100)]
 
     });
   }
@@ -41,7 +41,7 @@ export class ExperimentoDialogComponent {
       id: this.form.get('id').value,
       descricao: this.form.get('descricao').value,
       titulo: this.form.get('titulo').value,
-      data: this.form.get('data').value
+      data_cadas: this.form.get('data').value
     };
 
     if (this.isEdit) {

@@ -28,7 +28,6 @@ import { ExperimentoComponent } from './experimento/experimento.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    ExperimentoComponent,
 
   ],
   providers: [],
