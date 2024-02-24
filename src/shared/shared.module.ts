@@ -30,7 +30,6 @@ import { MatRippleModule } from '@angular/material/core';
 
 
 
-import { ConfirmModule } from './confirm/confirm.module';
 
 @NgModule({
     imports: [
@@ -101,7 +100,6 @@ import { ConfirmModule } from './confirm/confirm.module';
 
      
 
-        ConfirmModule
     ]
 })
 export class SharedModule {

@@ -1,0 +1,73 @@
+import { Component, Inject } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { EquipamentoService } from 'app/service/equipamento.service';
+import { ExperimentoService } from 'app/service/experimento.service';
+import {Experimento} from 'app/model/experimento';
+
+@Component({
+  selector: 'app-equipameto-dialog',
+  templateUrl: './equipameto-dialog.component.html',
+  styleUrls: ['./equipameto-dialog.component.scss']
+})
+export class ExperimentoDialogComponent {
+
+  form: FormGroup;
+  isEdit: boolean;
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: { experimento: Experimento },
+    private _formBuilder: FormBuilder,
+    private experimentoService: ExperimentoService, 
+  ) {
+    this.isEdit = !!this.data.experimento.id; // Verifica se está editando
+    this.createForm();
+  }
+
+  createForm(): void {
+    console.log('ID do equipamento recebido:', this.data.experimento.id);
+    this.form = this._formBuilder.group({
+      id: [this.data.experimento.id],
+      descricao: [this.data.experimento.descricao, Validators.maxLength(100)],
+      titulo: [this.data.experimento.titulo, Validators.maxLength(100)],
+      data: [this.data.experimento.data, Validators.maxLength(100)]
+
+    });
+  }
+  
+
+  onSubmit(): void {
+    const experimento: Experimento = {
+      id: this.form.get('id').value,
+      descricao: this.form.get('descricao').value,
+      titulo: this.form.get('titulo').value,
+      data: this.form.get('data').value
+    };
+
+    if (this.isEdit) {
+      // Atualizar equipamento existente
+      this.experimentoService.updateExperimento(this.data.experimento.id, experimento).subscribe(
+        response => {
+          console.log('Equipamento atualizado com sucesso:', response);
+          // Outras ações, se necessário
+        },
+        error => {
+          console.error('Erro ao atualizar equipamento:', error);
+          // Tratar o erro, se necessário
+        }
+      );
+    } else {
+      // Adicionar novo equipamento
+      this.experimentoService.addExperimento(experimento).subscribe(
+        response => {
+          console.log('Equipamento adicionado com sucesso:', response);
+          // Outras ações, se necessário
+        },
+        error => {
+          console.error('Erro ao adicionar equipamento:', error);
+          // Tratar o erro, se necessário
+        }
+      );
+    }
+  }
+}

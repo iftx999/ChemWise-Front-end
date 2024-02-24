@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
+import { ExperimentoComponent } from './experimento/experimento.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    ExperimentoComponent,
 
   ],
   providers: [],
