@@ -56,25 +56,26 @@ export class ExperimentoComponent implements OnInit{
       this.listarExperimentos();
     });
   }
-
   openDialog(row?: Experimento): void {
-    console.log('Abrindo diálogo para Experimento com ID:', row ? row.id : 'novo');
-    console.log(row ? row : new Experimento());
+    const isNewExperimento = !row; // Verifica se é um novo experimento (adicionar) ou não (editar)
+    console.log('Abrindo diálogo para Experimento com ID:', isNewExperimento ? 'novo' : row.id);
+
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.width = "40%";
     dialogConfig.minWidth = "380px";
     dialogConfig.data = {
-      Experimento: row ? row : new Experimento()
+        experimento: isNewExperimento ? new Experimento() : row // Passa o objeto experimento se for uma edição
     };
   
     const dialogRef = this.dialog.open(ExperimentoDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.salvarOuAtualizarExperimento(result);
-      }
+        if (result) {
+            this.salvarOuAtualizarExperimento(result);
+        }
     });
-  }
+}
+
   //deletar Experimento
   deleteExperimentos(id: number): void {
     this.experimentoService.deleteExperimento(id).subscribe(() => {

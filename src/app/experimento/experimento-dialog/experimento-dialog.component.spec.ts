@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { EquipametoDialogComponent } from './equipameto-dialog.component';
+import { EquipametoDialogComponent } from 'app/equipamentos/equipameto-dialog/equipameto-dialog.component';
 
 describe('EquipametoDialogComponent', () => {
   let component: EquipametoDialogComponent;
