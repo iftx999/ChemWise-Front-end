@@ -21,7 +21,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { EquipamentosComponent } from 'app/equipamentos/equipamentos.component';
 import { EquipametoDialogComponent } from 'app/equipamentos/equipameto-dialog/equipameto-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { MatTable, MatTableModule } from '@angular/material/table';
+import { BrowserModule } from '@angular/platform-browser';
+import { ExperimentoComponent } from 'app/experimento/experimento.component';
+import { ExperimentoDialogComponent } from 'app/experimento/experimento-dialog/experimento-dialog.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -37,6 +41,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTooltipModule,
     FlexLayoutModule,
     MatDialogModule,
+    MatTableModule,
+    BrowserModule,
+    MatIconModule,
   ],
   declarations: [
     DashboardComponent,
@@ -49,6 +56,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     UpgradeComponent,
     EquipamentosComponent,
     EquipametoDialogComponent,
+    ExperimentoComponent,
+    ExperimentoDialogComponent,
     
 
   ]

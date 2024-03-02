@@ -1,11 +1,18 @@
-<h2 mat-dialog-title>Hi </h2>
-<mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <mat-label>Favorite Animal</mat-label>
-  </mat-form-field>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button >No Thanks</button>
-  <button mat-button  cdkFocusInitial>Ok</button>
-</mat-dialog-actions>
+<h1 mat-dialog-title>{{ isEdit ? 'Editar Equipamento' : 'Adicionar Equipamento' }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome do Equipamento</mat-label>
+      <input matInput formControlName="nome">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Status do Equipamento</mat-label>
+      <input matInput formControlName="status">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onSubmit()">{{ isEdit ? 'Salvar Alterações' : 'Adicionar' }}</button>
+  <button mat-button mat-dialog-close>Cancelar</button>
+</div>
+

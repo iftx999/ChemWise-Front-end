@@ -1,5 +1,5 @@
-export interface Equipamento{
+export class Equipamento{
     id: number;
     nome_equipamento: string;
-    status: string,
+    status: string;
 }

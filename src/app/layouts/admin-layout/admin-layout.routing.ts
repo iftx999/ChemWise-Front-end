@@ -10,6 +10,8 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { EquipamentosComponent } from 'app/equipamentos/equipamentos.component';
 import { EquipametoDialogComponent } from 'app/equipamentos/equipameto-dialog/equipameto-dialog.component';
+import { ExperimentoComponent } from 'app/experimento/experimento.component';
+import { ExperimentoDialogComponent } from 'app/experimento/experimento-dialog/experimento-dialog.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -64,5 +66,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'equipamento',    component: EquipamentosComponent },
     { path: 'dialogEquipamento',    component: EquipametoDialogComponent },
+    { path: 'experimento',    component: ExperimentoComponent },
+    { path: 'dialogExperimento',    component: ExperimentoDialogComponent },
+
 
 ];
