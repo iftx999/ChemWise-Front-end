@@ -18,7 +18,7 @@ export class ExperimentoService {
     //adicionar experimento
     addExperimento(experimento: Experimento): Observable<Experimento> {
         return this.http.post<Experimento>(this.apiUrl, experimento);
-    }
+      }
     //atualizar experimento
     updateExperimento(id: number, experimento: Experimento): Observable<Experimento> {
         return this.http.put<Experimento>(this.apiUrl + '/' + id, experimento);

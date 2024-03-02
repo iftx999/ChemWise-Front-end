@@ -28,12 +28,13 @@
             <ng-container matColumnDef="actions">
               <th mat-header-cell *matHeaderCellDef> Ações </th>
               <td mat-cell *matCellDef="let equipamento">
-                <button mat-raised-button color="warn" (click)="openDialog(equipamento)">    <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
+                <button mat-icon-button  (click)="openDialog(equipamento)">    
+                  <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
                 </button>
-                <button mat-raised-button color="warn" (click)="deleteEquipamentos(equipamento.id)">    
-                  <mat-icon aria-label="Example icon-button with a heart icon">delete</mat-icon>
+                <button mat-icon-button aria-label="Example icon button with a home icon">
+                  <mat-icon>delete</mat-icon>
                 </button>
-                --
+              
               </td>
             </ng-container>
 

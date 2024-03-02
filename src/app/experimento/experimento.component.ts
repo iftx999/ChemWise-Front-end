@@ -16,7 +16,7 @@ export class ExperimentoComponent implements OnInit{
 
   experimentoList: Experimento[];
   experimentoDataSource: MatTableDataSource<Experimento>;
-  experimentoColuns: string[] = ['titulo', 'descricao', 'data'];
+  experimentoColuns: string[] = ['titulo', 'descricao', 'data', 'actions'];
 
   @ViewChild(MatSort) sort: MatSort;
 

@@ -33,12 +33,12 @@
               <ng-container matColumnDef="actions">
                 <th mat-header-cell *matHeaderCellDef> Ações </th>
                 <td mat-cell *matCellDef="let experimento">
-                  <button mat-raised-button color="warn" (click)="openDialog(experimento)">    <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
+                  <button mat-icon-button  (click)="openDialog(experimento)">    <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
                   </button>
-                  <button mat-raised-button color="warn" (click)="deleteExperimentos(experimento.id)">    
+                  <button mat-icon-button  (click)="deleteExperimentos(experimento.id)">    
                     <mat-icon aria-label="Example icon-button with a heart icon">delete</mat-icon>
                   </button>
-                  --
+              
                 </td>
               </ng-container>
   

@@ -1,7 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { EquipamentoService } from 'app/service/equipamento.service';
 import { ExperimentoService } from 'app/service/experimento.service';
 import {Experimento} from 'app/model/experimento';
 
@@ -30,7 +29,7 @@ export class ExperimentoDialogComponent {
       id: [this.data.experimento.id],
       descricao: [this.data.experimento.descricao, Validators.maxLength(100)],
       titulo: [this.data.experimento.titulo, Validators.maxLength(100)],
-      data: [this.data.experimento.data_cadas, Validators.maxLength(100)]
+      data_cadas: [this.data.experimento.data_cadas, Validators.maxLength(100)]
 
     });
   }
@@ -39,9 +38,9 @@ export class ExperimentoDialogComponent {
   onSubmit(): void {
     const experimento: Experimento = {
       id: this.form.get('id').value,
-      descricao: this.form.get('descricao').value,
       titulo: this.form.get('titulo').value,
-      data_cadas: this.form.get('data').value
+      descricao: this.form.get('descricao').value,
+      data_cadas: this.form.get('data_cadas').value
     };
 
     if (this.isEdit) {

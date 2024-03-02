@@ -25,7 +25,7 @@ import { MatTable, MatTableModule } from '@angular/material/table';
 import { BrowserModule } from '@angular/platform-browser';
 import { ExperimentoComponent } from 'app/experimento/experimento.component';
 import { ExperimentoDialogComponent } from 'app/experimento/experimento-dialog/experimento-dialog.component';
-
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -43,6 +43,7 @@ import { ExperimentoDialogComponent } from 'app/experimento/experimento-dialog/e
     MatDialogModule,
     MatTableModule,
     BrowserModule,
+    MatIconModule,
   ],
   declarations: [
     DashboardComponent,
