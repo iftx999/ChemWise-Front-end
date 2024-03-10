@@ -1,13 +1,14 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ExperimentoService } from 'app/service/experimento.service';
 import {Experimento} from 'app/model/experimento';
+import { PesquisaProjeto } from 'app/model/pesquisaProjeto';
+import { PesquisaProjetoService } from 'app/service/pesquisaProjeto.service';
 
 @Component({
-  selector: 'app-experimento-dialog',
-  templateUrl: './experimento-dialog.component.html',
-  styleUrls: ['./experimento-dialog.component.scss']
+  selector: 'app-pesquisaProjeto-dialog',
+  templateUrl: './pesquisaProjeto-dialog.component.html',
+  styleUrls: ['./pesquisaProjeto-dialog.component.scss']
 })
 export class PesquisaProjetoDialogComponent {
 
@@ -15,37 +16,35 @@ export class PesquisaProjetoDialogComponent {
   isEdit: boolean;
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: { experimento: Experimento },
+    @Inject(MAT_DIALOG_DATA) public data: { pesquisaProjeto: PesquisaProjeto },
     private _formBuilder: FormBuilder,
-    private experimentoService: ExperimentoService, 
+    private pesquisaProjetoService: PesquisaProjetoService, 
   ) {
-    this.isEdit = !!this.data.experimento.id; // Verifica se está editando
+    this.isEdit = !!this.data.pesquisaProjeto.id; // Verifica se está editando
     this.createForm();
   }
 
   createForm(): void {
-    console.log('ID do equipamento recebido:', this.data.experimento.id);
+    console.log('ID do equipamento recebido:', this.data.pesquisaProjeto.id);
     this.form = this._formBuilder.group({
-      id: [this.data.experimento.id],
-      descricao: [this.data.experimento.descricao, Validators.maxLength(100)],
-      titulo: [this.data.experimento.titulo, Validators.maxLength(100)],
-      data_cadas: [this.data.experimento.data_cadas, Validators.maxLength(100)]
+      id: [this.data.pesquisaProjeto.id],
+      descricao: [this.data.pesquisaProjeto.descricao, Validators.maxLength(100)],
+      nomeProjeto: [this.data.pesquisaProjeto.nomeprojeto, Validators.maxLength(100)],
 
     });
   }
   
 
   onSubmit(): void {
-    const experimento: Experimento = {
+    const pesquisaProjeto: PesquisaProjeto = {
       id: this.form.get('id').value,
-      titulo: this.form.get('titulo').value,
       descricao: this.form.get('descricao').value,
-      data_cadas: this.form.get('data_cadas').value
+      nomeprojeto: this.form.get('nomeProjeto').value,
     };
 
     if (this.isEdit) {
       // Atualizar equipamento existente
-      this.experimentoService.updateExperimento(this.data.experimento.id, experimento).subscribe(
+      this.pesquisaProjetoService.updatePesquisaProjeto(this.data.pesquisaProjeto.id, pesquisaProjeto).subscribe(
         response => {
           console.log('Equipamento atualizado com sucesso:', response);
           // Outras ações, se necessário
@@ -57,7 +56,7 @@ export class PesquisaProjetoDialogComponent {
       );
     } else {
       // Adicionar novo equipamento
-      this.experimentoService.addExperimento(experimento).subscribe(
+      this.pesquisaProjetoService.addPesquisaProjeto(pesquisaProjeto).subscribe(
         response => {
           console.log('Equipamento adicionado com sucesso:', response);
           // Outras ações, se necessário

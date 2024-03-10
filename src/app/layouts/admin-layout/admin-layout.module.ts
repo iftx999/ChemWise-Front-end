@@ -26,6 +26,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ExperimentoComponent } from 'app/experimento/experimento.component';
 import { ExperimentoDialogComponent } from 'app/experimento/experimento-dialog/experimento-dialog.component';
 import {MatIconModule} from '@angular/material/icon';
+import { PesquisaProjetoDialogComponent } from 'app/pesquisaProjeto/pesquisaProjeto-dialog/pesquisaProjeto-dialog.component';
 
 @NgModule({
   imports: [
@@ -58,6 +59,7 @@ import {MatIconModule} from '@angular/material/icon';
     EquipametoDialogComponent,
     ExperimentoComponent,
     ExperimentoDialogComponent,
+    PesquisaProjetoDialogComponent,
     
 
   ]

@@ -1,18 +1,15 @@
-<h1 mat-dialog-title>{{ isEdit ? 'Editar Experimento' : 'Adicionar Experimento' }}</h1>
+<h1 mat-dialog-title>{{ isEdit ? 'Editar Pesquisa' : 'Adicionar Pesquisa' }}</h1>
 <div mat-dialog-content>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="fill">
       <mat-label>titulo</mat-label>
-      <input matInput formControlName="titulo">
+      <input matInput formControlName="nomeProjeto">
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Descricao</mat-label>
       <input matInput formControlName="descricao">
     </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Data</mat-label>
-      <input matInput formControlName="data_cadas">
-    </mat-form-field>
+    
   </form>
 </div>
 <div mat-dialog-actions>
