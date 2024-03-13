@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>{{ isEdit ? 'Editar Pesquisa' : 'Adicionar Pesquisa' }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>titulo</mat-label>
+      <input matInput formControlName="nomeProjeto">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Descricao</mat-label>
+      <input matInput formControlName="descricao">
+    </mat-form-field>
+    
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onSubmit()">{{ isEdit ? 'Salvar Alterações' : 'Adicionar' }}</button>
+  <button mat-button mat-dialog-close>Cancelar</button>
+</div>
+

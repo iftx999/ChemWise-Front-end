@@ -6,7 +6,7 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
-import { TypographyComponent } from '../../typography/typography.component';
+import { TypographyComponent } from '../../pesquisaProjeto/pesquisaProjeto.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
@@ -26,6 +26,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ExperimentoComponent } from 'app/experimento/experimento.component';
 import { ExperimentoDialogComponent } from 'app/experimento/experimento-dialog/experimento-dialog.component';
 import {MatIconModule} from '@angular/material/icon';
+import { PesquisaProjetoDialogComponent } from 'app/pesquisaProjeto/pesquisaProjeto-dialog/pesquisaProjeto-dialog.component';
 
 @NgModule({
   imports: [
@@ -58,6 +59,7 @@ import {MatIconModule} from '@angular/material/icon';
     EquipametoDialogComponent,
     ExperimentoComponent,
     ExperimentoDialogComponent,
+    PesquisaProjetoDialogComponent,
     
 
   ]
