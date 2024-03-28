@@ -26,6 +26,7 @@ export class TypographyComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.listarPesquisaProjetos();
   }
 
   listarPesquisaProjetos(): void {

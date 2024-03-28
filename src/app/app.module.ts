@@ -10,6 +10,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { ExperimentoComponent } from './experimento/experimento.component';
+import { ReagenteComponent } from './reagente/reagente.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ExperimentoComponent } from './experimento/experimento.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    ReagenteComponent,
 
   ],
   providers: [],
